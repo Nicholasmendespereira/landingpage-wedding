@@ -1,0 +1,145 @@
+
+:root {
+    --color-pink: #FFA1AD;
+    --color-brown: #3A3116;
+    --color-blue: #00245F;
+}
+
+/* body {
+  font-family: 'MinhaFonte', sans-serif;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+    margin: 0 1rem;
+}
+.backgroundImageRoses {
+    background-image: url('../images//background/ROSAS_LOGO_PANELA.png');
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 21vh;
+    width: 100%;
+}
+.containerNameHeart {
+    display: flex;
+    justify-content: center;
+}
+#nameHeart {
+    width: 16rem;
+}
+#names {
+    width: 20rem;
+}
+.containerNames, .containerDate {
+    display: flex;
+    justify-content: center;
+}
+.containerDate {
+    align-items: center;
+    gap: 20px;
+}
+.containerIcons {
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon {
+    width: 10%;
+}
+.paragraph, .paragraphAtention, .paragraphAdress, .paragraphPix {
+    text-align: center;
+    margin: 1rem 0;
+    font-weight: 400;
+    color: #00245F;
+    font-family: "Montserrat", sans-serif;
+}
+.paragraphAdress {
+    font-size: small;
+}
+.paragraphAtention {
+    font-size: x-small;
+}
+.paragraphPix {
+    text-align: left;
+    margin: 0;
+}
+#month, #dateDay {
+    font-size: xxx-large;
+    text-align: center;
+    font-family: "DM Serif Display", serif;
+    font-weight: normal;
+    color: #FFA1AD;
+}
+.detailsDate {
+    font-size: larger;
+    color: #00245F;
+    font-family: "DM Serif Display", serif;
+    font-weight: normal;
+    text-decoration: underline overline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+}
+#infoPaymentHome {
+    font-size: small;
+    margin: 1rem auto;
+    color: #3A3116;
+    border: 2px solid #3A3116;
+    padding: 5px;
+    border-radius: 85.5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#infoPaymentHome > * {
+    color: #3A3116;
+}
+#iconHome {
+    margin:0 10px;
+    height: 2rem;
+    width: 2rem;
+}
+.containerButtonAction {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.buttonsAction {
+    font-size: x-small;
+    width: 15rem;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #00245F;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: white;
+    font-weight: bold;
+}
+/* tablets e celulares grandes */
+@media (min-width: 480px) {
+    .backgroundImageRoses {
+        min-height: 56vh;
+    }
+}
+
+/* tablet */
+@media (min-width: 767px) {
+    .backgroundImageRoses {
+        min-height: 80vh;
+    }
+    #names {
+        width: 40rem;
+    }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+    .backgroundImageRoses {
+        min-height: 100vh;
+    }
+    #names {
+        width: 40rem;
+    }
+}
