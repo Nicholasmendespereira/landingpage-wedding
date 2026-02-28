@@ -1,0 +1,80 @@
+header {
+    display: flex;
+    flex-direction: column;   /* mobile primeiro */
+    gap: 3rem;
+    text-align: center;
+    padding: 1rem;
+}
+.titlePage {
+    font-family: "Birthstone", cursive;
+}
+.paragraph, #titleBigDay {
+    text-align: center;
+    margin: 1rem 0;
+    font-weight: 400;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
+}
+#imgColors {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+.containerInspirationImageGodParents {
+    display: flex;
+    justify-content: center;
+}
+h2 {
+    text-align: center;
+    font-family: "Birthstone", cursive;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin: 2rem 0;
+}
+#backgroundImageGpdParents, #bridesmaids {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+}
+.iconGodParents {
+    width: 8rem;
+    height: auto;
+}
+#containerDetails {
+    display: flex;
+    flex-direction: column;  /* mobile empilhado */
+    gap: 2rem;
+    padding: 1rem;
+}
+#containerDetails {
+    text-align: center;
+}
+#titleBigDay {
+    font-weight: 500;
+}
+.containerIconsGodParents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.containerCardsDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+@media (min-width: 1024px) {
+    #containerDetails {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
