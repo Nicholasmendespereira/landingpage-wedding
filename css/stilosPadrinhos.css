@@ -78,14 +78,15 @@ h2 {
     text-align: center;
 }
 
-#backGroundGodParentsManual {
-    background-image: url('../images/background/toda_a_arte.png');
-    background-size: contain;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    min-height: 100vh;
+.manualContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.manualImage {
     width: 100%;
+    height: auto;
+    display: block;
 }
 .containerButtonAction {
     display: flex;
