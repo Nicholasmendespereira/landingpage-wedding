@@ -5,6 +5,20 @@ header {
     text-align: center;
     padding: 1rem;
 }
+body {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+/* Quando a página terminar de carregar */
+body.loaded {
+  opacity: 1;
+}
+
+/* Quando for sair da página */
+body.fade-out {
+  opacity: 0;
+}
 .titlePage {
     font-family: "Birthstone", cursive;
 }
@@ -31,7 +45,7 @@ h2 {
     margin: 2rem 0;
 }
 #backgroundImageGpdParents, #bridesmaids {
-    width: 100%;
+    width: 90%;
     max-width: 900px;
     height: auto;
 }
@@ -62,6 +76,46 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+#backGroundGodParentsManual {
+    background-image: url('../images/background/toda_a_arte.png');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    min-height: 100vh;
+    width: 100%;
+}
+.containerButtonAction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#arrowNextImage {
+    width: 4rem;
+}
+.buttonsAction {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    max-width: 2.5rem;
+    font-size: x-small;
+    border-radius: 50px;
+    background-color: #00245F;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.buttonsAction:hover {
+    transform: translateY(-3px);
+}
+
+.buttonsAction:active {
+    transform: scale(0.97);
 }
 
 @media (min-width: 768px) {

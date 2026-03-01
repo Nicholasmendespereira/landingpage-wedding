@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padrinhos | Ianara & Nicholas</title>
+
+    <!-- mesmo CSS -->
+    <link rel="stylesheet" href="../css/stilosPadrinhos.css">
+
+    <!-- mesmas fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="backGroundGodParentsManual">
+    </div>
+    <div class="containerButtonAction">
+        <a href="../index.html" class="buttonsAction">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+        </a>
+        <a href="../pages/padrinhosPage2.html" class="buttonsAction">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+        </a>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fade-in ao carregar
+            document.body.classList.add("loaded");
+            // Captura todos os links
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function(e) {
+
+                    // Ignora nova aba
+                    if (this.target === "_blank") return;
+
+                    e.preventDefault();
+                    const href = this.href;
+
+                    // Aplica fade-out
+                    document.body.classList.remove("loaded");
+                    document.body.classList.add("fade-out");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 400); // mesmo tempo do CSS
+                });
+            });
+        });
+    </script>
+</body>
+</html>

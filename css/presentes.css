@@ -1,0 +1,66 @@
+#cardItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.imgCard {
+    width: 12rem;
+    border-radius: 20px;
+    max-width: 300px;
+}
+.descriptionCard, .valueCard, .descriptionInstallments {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.valueCard {
+    margin: 0.5rem 0;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: #0050D1;
+}
+.descriptionInstallments {
+    font-weight: 400;
+    margin: 0.5rem 0;
+}
+.buttonAddCar {
+    text-align: center;
+    width: 12rem;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #15680C;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+.containerButtonAction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.buttonsAction {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    max-width: 2.5rem;
+    font-size: x-small;
+    border-radius: 50px;
+    background-color: #00245F;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.buttonsAction:hover {
+    transform: translateY(-3px);
+}
+
+.buttonsAction:active {
+    transform: scale(0.97);
+}
