@@ -109,7 +109,6 @@ section {
 }
 #infoPaymentHome {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     max-width: 500px;
@@ -119,7 +118,6 @@ section {
     border: 2px solid #3A3116;
     padding: 5px;
     border-radius: 85.5px;
-    display: flex;
     gap: 10px;
     align-items: center;
 }
