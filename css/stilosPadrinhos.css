@@ -24,10 +24,15 @@ body.fade-out {
 }
 .paragraph, #titleBigDay {
     text-align: center;
-    margin: 1rem 0;
+    margin: 1rem 0 2rem 0;
+    font-size: xx-large;
     font-weight: 400;
     color: #000000;
     font-family: "Montserrat", sans-serif;
+}
+.paragraph {
+    font-size: medium;
+    font-weight: 500;
 }
 #imgColors {
     width: 100%;
@@ -36,6 +41,7 @@ body.fade-out {
 }
 .containerInspirationImageGodParents {
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 h2 {
@@ -45,8 +51,8 @@ h2 {
     margin: 2rem 0;
 }
 #backgroundImageGpdParents, #bridesmaids {
-    width: 90%;
-    max-width: 900px;
+    margin: 0.5rem 0;
+    width: 100%;
     height: auto;
 }
 .iconGodParents {
@@ -57,7 +63,6 @@ h2 {
     display: flex;
     flex-direction: column;  /* mobile empilhado */
     gap: 2rem;
-    padding: 1rem;
 }
 #containerDetails {
     text-align: center;
