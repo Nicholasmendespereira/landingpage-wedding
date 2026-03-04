@@ -1,3 +1,60 @@
+#containerSearch {
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+    background: #ffa1ad82;
+}
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.search-wrapper input {
+  width: 50%;
+  padding: 0.9em 1.2em 0.9em 3em;
+  border-radius: 50px;
+  border: 1px solid #e8dede;
+  background-color: #fffafc;
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-family: "Montserrat", sans-serif;
+  color: #5a4a4a;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.search-wrapper input::placeholder {
+  color: #b8a9a9;
+}
+
+.search-wrapper input:focus {
+  border-color: #d8b4b4;
+  box-shadow: 0 6px 18px rgba(216, 180, 180, 0.3);
+  background-color: #ffffff;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2em;
+  height: 1.2em;
+  color: #c9a4a4;
+  pointer-events: none;
+}
+.paragraph {
+    line-height: 1.6;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    color: #00245F;
+    font-family: "Montserrat", sans-serif;
+    font-size: medium;
+    font-weight: 500;
+}
 #cardItems {
     display: flex;
     flex-wrap: wrap;
@@ -38,6 +95,7 @@
     padding: 10px;
 }
 .containerButtonAction {
+    margin: 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;

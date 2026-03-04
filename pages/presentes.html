@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,6 +23,32 @@
 
     <main>
         <section>
+            <div id="containerSearch">
+                <div class="search-wrapper">
+                    <div>
+                        <svg class="search-icon" viewBox="0 0 24 24">
+                            <path d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Buscar pelo nome..."
+                    />
+                </div>
+            </div>
+
+            <div>
+                <p class="paragraph">
+                    Seja bem-vindo ao nosso sonho. <br>
+                    Será uma alegria compartilhar este novo capítulo com você e contar com a sua presença.
+                </p>
+            </div>
             <div id="cardItems">
             </div>
         </section>
@@ -64,8 +91,22 @@
             });
         });
         const products = [
-            { id: 1, name: "Micro-ondas 42L", price: 276.00, src_image: "../images/padrinhos/florista_e_porta_alianças.png", img_alt: "" },
-            { id: 2, name: "Geladeira Panasonic 450L", price: 345.00, src_image: "" }
+            { id: 1, name: "AIRFRYER", price: 276.00, src_image: "../images/items/AIRFRYER.png", img_alt: "" },
+            { id: 2, name: "ARMARIO DE COZINHA", price: 276.00, src_image: "../images/items/ARMARIO_DE_COZINHA.png", img_alt: "" },
+            { id: 3, name: "BATEDEIRA", price: 276.00, src_image: "../images/items/BATEDEIRA.png", img_alt: "" },
+            { id: 4, name: "CHUVEIRO", price: 276.00, src_image: "../images/items/CHUVEIRO.png", img_alt: "" },
+            { id: 5, name: "COLCHÃO", price: 276.00, src_image: "../images/items/COLCHÃO.png", img_alt: "" },
+            { id: 6, name: "CONJUNTO DE PANELAS", price: 276.00, src_image: "../images/items/CONJUNTO_DE_PANELAS.png", img_alt: "" },
+            { id: 7, name: "FERRO DE PASSAR", price: 276.00, src_image: "../images/items/FERRO_DE_PASSAR.png", img_alt: "" },
+            { id: 8, name: "FORNO", price: 276.00, src_image: "../images/items/FORNO.png", img_alt: "" },
+            { id: 9, name: "GELADEIRA", price: 276.00, src_image: "../images/items/GELADEIRA.png", img_alt: "" },
+            { id: 10, name: "GUARDA ROUPAS", price: 276.00, src_image: "../images/items/GUARDA_ROUPAS.png", img_alt: "" },
+            { id: 11, name: "KIT TOALHAS", price: 276.00, src_image: "../images/items/KIT_TOALHAS.png", img_alt: "" },
+            { id: 12, name: "MESA 6 LUGARES", price: 276.00, src_image: "../images/items/MESA_6_LUGARES.png", img_alt: "" },
+            { id: 13, name: "MICROODAS", price: 276.00, src_image: "../images/items/MICROODAS.png", img_alt: "" },
+            { id: 14, name: "MULTIPROCESSADOR", price: 276.00, src_image: "../images/items/MULTIPROCESSADOR.png", img_alt: "" },
+            { id: 15, name: "PANELA DE PRESSAO", price: 276.00, src_image: "../images/items/PANELA_DE_PRESSAO.png", img_alt: "" },
+            { id: 16, name: "TAPETE", price: 276.00, src_image: "../images/items/TAPETE.png", img_alt: "" }
         ];
 
         function addToCard(id) {
@@ -79,9 +120,13 @@
 
             alert("Produto adicionado ao carrinho!");
         }
-        function handleLoadCards() {
-            const container = document.getElementById("cardItems");
-            products.forEach(item => {
+        const container = document.getElementById("cardItems");
+        const input = document.getElementById("searchInput");
+
+        function handleLoadCards(list) {
+            container.innerHTML = "";
+
+            list.forEach(item => {
             container.innerHTML += `
                 <div class="containerCard">
                     <img class="imgCard" src=${item.src_image} alt=${item.img_alt}>
@@ -93,7 +138,22 @@
             `;
             });
         }
-        handleLoadCards()
+        handleLoadCards(products)
+
+        // Função de filtro
+        function filterItems(searchValue) {
+            const filtered = products.filter(item =>
+                item.name.toLowerCase().includes(searchValue.toLowerCase())
+            );
+
+            handleLoadCards(filtered);
+        }
+
+        // Evento ao digitar
+        input.addEventListener("input", (e) => {
+        filterItems(e.target.value);
+        });
+
     </script>
 </body>
 </html>

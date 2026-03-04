@@ -108,6 +108,7 @@ section {
     text-decoration-thickness: 2px;
 }
 #infoPaymentHome {
+    width: 20rem;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -126,8 +127,8 @@ section {
 }
 #iconHome {
     margin:0 10px;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
 }
 .containerButtonAction {
     display: flex;

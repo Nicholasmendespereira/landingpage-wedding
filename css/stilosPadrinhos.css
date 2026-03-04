@@ -20,17 +20,18 @@ body.fade-out {
   opacity: 0;
 }
 .titlePage {
-    font-family: "Birthstone", cursive;
-}
-.paragraph, #titleBigDay {
+    margin: 0.5rem 0;
     text-align: center;
-    margin: 1rem 0 2rem 0;
-    font-size: xx-large;
-    font-weight: 400;
-    color: #000000;
-    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-family: "Great Vibes", cursive;
 }
 .paragraph {
+    line-height: 1.6;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    color: #000000;
+    font-family: "Montserrat", sans-serif;
     font-size: medium;
     font-weight: 500;
 }
@@ -46,7 +47,7 @@ body.fade-out {
 }
 h2 {
     text-align: center;
-    font-family: "Birthstone", cursive;
+    font-family: "Great Vibes", cursive;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin: 2rem 0;
 }
@@ -66,9 +67,6 @@ h2 {
 }
 #containerDetails {
     text-align: center;
-}
-#titleBigDay {
-    font-weight: 500;
 }
 .containerIconsGodParents {
     display: flex;
