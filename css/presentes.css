@@ -4,12 +4,13 @@
     background: #ffa1ad82;
 }
 .search-wrapper {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 90%;
-  max-width: 420px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+    max-width: 420px;
+    margin: 0 auto;
+    flex-direction: row-reverse;
 }
 
 .search-wrapper input {
@@ -45,6 +46,25 @@
   height: 1.2em;
   color: #c9a4a4;
   pointer-events: none;
+}
+.shoping-car-icon {
+  /* transform: translateY(-50%); */
+  width: 1.2em;
+  height: 1.2em;
+  color: #00245F;
+  cursor: pointer;
+}
+.containerCarShopping {
+    display: flex;
+    align-items: center;
+}
+.totalValue {
+    font-size: 1rem;
+    background: #15680C;
+    padding: 3px;
+    border-radius: 100%;
+    width: 1rem;
+    text-align: center;
 }
 .paragraph {
     line-height: 1.6;
@@ -100,6 +120,9 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+#buttonCarShoppings {
+    cursor: pointer;
 }
 .buttonsAction {
     display: inline-block;

@@ -1,0 +1,119 @@
+.checkout-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fffafc;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  font-family: 'Playfair Display', serif;
+}
+
+.checkout-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #6e5c5c;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0e6e6;
+}
+
+.cart-item span {
+  color: #5a4a4a;
+}
+
+#cardItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.imgCard {
+    width: 12rem;
+    border-radius: 20px;
+    max-width: 300px;
+}
+.descriptionCard, .valueCard, .descriptionInstallments {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.valueCard {
+    margin: 0.5rem 0;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    color: #0050D1;
+}
+.descriptionInstallments {
+    font-weight: 400;
+    margin: 0.5rem 0;
+}
+.buttonAddCar {
+    text-align: center;
+    width: 3rem;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #ff0808f5;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.finish-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+  border: none;
+  border-radius: 40px;
+  background: #d8b4b4;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.finish-btn:hover {
+  background: #c79a9a;
+}
+
+.containerButtonAction {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.buttonsAction {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    max-width: 2.5rem;
+    font-size: x-small;
+    border-radius: 50px;
+    background-color: #00245F;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.buttonsAction:hover {
+    transform: translateY(-3px);
+}
+
+.buttonsAction:active {
+    transform: scale(0.97);
+}

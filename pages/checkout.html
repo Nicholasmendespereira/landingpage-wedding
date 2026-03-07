@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padrinhos | Ianara & Nicholas</title>
+
+    <!-- mesmo CSS -->
+    <link rel="stylesheet" href="../css/checkout.css">
+
+    <!-- mesmas fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <section class="checkout-container">
+            <h2 class="checkout-title">Resumo do Presente</h2>
+            <div id="cardItems"></div>
+            <div class="checkout-total">
+                <span>Total</span>
+                <strong id="cartTotal">R$ 0,00</strong>
+            </div>
+            <button id="finishButton" class="finish-btn">
+                Finalizar e Gerar Pagamento
+            </button>
+        </section>
+        <div class="containerButtonAction">
+            <a href="../pages/presentes.html" class="buttonsAction">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+            </a>
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fade-in ao carregar
+            document.body.classList.add("loaded");
+            // Captura todos os links
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function(e) {
+
+                    // Ignora nova aba
+                    if (this.target === "_blank") return;
+
+                    e.preventDefault();
+                    const href = this.href;
+
+                    // Aplica fade-out
+                    document.body.classList.remove("loaded");
+                    document.body.classList.add("fade-out");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 400); // mesmo tempo do CSS
+                });
+            });
+        });
+        const container = document.getElementById("cardItems");
+        const input = document.getElementById("searchInput");
+
+        function handleLoadCards() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let totalValueForPayment = 0
+            container.innerHTML = "";
+
+            cart.forEach(item => {
+                totalValueForPayment += item.price
+                container.innerHTML += `
+                    <div class="containerCard">
+                        <img class="imgCard" src=${item.src_image} alt=${item.img_alt}>
+                        <p class="descriptionCard">${item.name}</p>
+                        <p class="valueCard">R$ ${String(item.price.toFixed(2)).replace(".", ",")}</p>
+                        <p class="descriptionInstallments">em até 3x de R$ ${item.price ? String((item.price / 3).toFixed(2)).replace(".", ",") : '-'}</p>
+                        <button class="buttonAddCar" onclick="handleRemoveItem(${item.id})">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                                <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                `;
+            });
+            const divTotal = document.getElementById("cartTotal");
+            divTotal.innerHTML = `R$ ${String(totalValueForPayment.toFixed(2)).replace('.', ',')}`
+        }
+        handleLoadCards()
+
+        function handleRemoveItem(id) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const updateCart = cart.filter(item => item.id !== id);
+            localStorage.setItem("cart", JSON.stringify(updateCart));
+            alert("Produto removido do carrinho!");
+            handleLoadCards()
+        }
+    </script>
+</body>
+</html>
