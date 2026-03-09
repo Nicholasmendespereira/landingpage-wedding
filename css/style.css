@@ -63,6 +63,7 @@ section {
     justify-content: center;
 }
 .containerDate {
+    margin-top: -2rem;
     align-items: center;
     gap: 20px;
 }
@@ -93,7 +94,7 @@ section {
     margin: 0;
 }
 #month, #dateDay {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(4rem, 5vw, 3.5rem);
     text-align: center;
     font-family: "DM Serif Display", serif;
     font-weight: normal;

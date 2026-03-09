@@ -1,10 +1,17 @@
 #containerSearch {
+    display: flex;
+    align-items: center;
     border-radius: 10px 10px 0px 0px;
     padding: 10px;
     background: #ffa1ad82;
 }
+#iconHome {
+    width: 2rem;
+}
 .search-wrapper {
+    gap: 20px;
     display: flex;
+    align-items: flex-end;
     justify-content: center;
     position: relative;
     width: 90%;
@@ -39,7 +46,7 @@
 
 .search-icon {
   position: absolute;
-  left: 20%;
+  left: 12%;
   top: 50%;
   transform: translateY(-50%);
   width: 1.2em;
@@ -49,9 +56,7 @@
 }
 .shoping-car-icon {
   /* transform: translateY(-50%); */
-  width: 1.2em;
-  height: 1.2em;
-  color: #00245F;
+  width: 1.5rem;
   cursor: pointer;
 }
 .containerCarShopping {
