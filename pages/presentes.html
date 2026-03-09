@@ -19,40 +19,43 @@
 <body>
     <main>
         <section>
-            <div id="containerSearch">
-                <div id="iconHome">
-                    <a href="../index.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#00245F">
-                            <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="search-wrapper">
-                    <div>
-                        <div>
-                            <svg class="search-icon" viewBox="0 0 24 24">
-                                <path d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                fill="none"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"/>
+            <div id="containerHeaderGifts">
+                <h2 id="initialsNames">Ianara & Nicholas </h2>
+                <div id="containerSearch">
+                    <div id="iconHome">
+                        <a href="../index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#00245F">
+                                <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                             </svg>
-                        </div>
-                        <div class="containerCarShopping">
-                            <a href="../pages/checkout.html" id="buttonCarShoppings">
-                                <svg class="shoping-car-icon" fill="#00245F" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-                                    <path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/>
-                                </svg>
-                            </a>
-                            <h3 id="totalValue"></h3>
-                        </div>
+                        </a>
                     </div>
-                    <input 
-                        type="text" 
-                        id="searchInput" 
-                        placeholder="Buscar pelo nome..."
-                    />
+                    <div class="search-wrapper">
+                        <div>
+                            <div>
+                                <svg class="search-icon" viewBox="0 0 24 24">
+                                    <path d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    fill="none"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="containerCarShopping">
+                                <a href="../pages/checkout.html" id="buttonCarShoppings">
+                                    <svg class="shoping-car-icon" fill="#00245F" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/>
+                                    </svg>
+                                </a>
+                                <h3 id="totalValue"></h3>
+                            </div>
+                        </div>
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Buscar pelo nome..."
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -104,22 +107,25 @@
             });
         });
         const products = [
-            { id: 1, name: "Airfryer", price: 276.00, src_image: "../images/items/AIRFRYER.png", img_alt: "" },
-            { id: 2, name: "Armário de cozinha", price: 276.00, src_image: "../images/items/ARMARIO_DE_COZINHA.png", img_alt: "" },
-            { id: 3, name: "Batedeira", price: 276.00, src_image: "../images/items/BATEDEIRA.png", img_alt: "" },
-            { id: 4, name: "Chuveiro", price: 276.00, src_image: "../images/items/CHUVEIRO.png", img_alt: "" },
-            { id: 5, name: "Colchão", price: 276.00, src_image: "../images/items/COLCHÃO.png", img_alt: "" },
-            { id: 6, name: "Conjunto de panelas", price: 276.00, src_image: "../images/items/CONJUNTO_DE_PANELAS.png", img_alt: "" },
-            { id: 7, name: "Ferro de passar", price: 276.00, src_image: "../images/items/FERRO_DE_PASSAR.png", img_alt: "" },
-            { id: 8, name: "Forno", price: 276.00, src_image: "../images/items/FORNO.png", img_alt: "" },
-            { id: 9, name: "Geladeira", price: 276.00, src_image: "../images/items/GELADEIRA.png", img_alt: "" },
-            { id: 10, name: "Guarda roupas", price: 276.00, src_image: "../images/items/GUARDA_ROUPAS.png", img_alt: "" },
-            { id: 11, name: "Kit toalhas", price: 276.00, src_image: "../images/items/KIT_TOALHAS.png", img_alt: "" },
-            { id: 12, name: "Mesa 6 lugares", price: 276.00, src_image: "../images/items/MESA_6_LUGARES.png", img_alt: "" },
-            { id: 13, name: "Micro-ondas", price: 276.00, src_image: "../images/items/MICROODAS.png", img_alt: "" },
-            { id: 14, name: "Multiprocessador", price: 276.00, src_image: "../images/items/MULTIPROCESSADOR.png", img_alt: "" },
-            { id: 15, name: "Panela de pressão", price: 276.00, src_image: "../images/items/PANELA_DE_PRESSAO.png", img_alt: "" },
-            { id: 16, name: "Tapete", price: 276.00, src_image: "../images/items/TAPETE.png", img_alt: "" }
+            { id: 1, name: "Geladeira Panasonic BB65 Black Glass Inverse 450L 220V", price: 345.00, src_image: "../images/items/GELADEIRA.png"},
+            { id: 2, name: "Fogão 5 Bocas Atlas Preto Mesa de Vidro Mônaco", price: 320.00, src_image: "../images/items/FOGÃO.png"},
+            { id: 3, name: "Base e colchão casal Emma Queen 158x198", price: 338.00, src_image: "../images/items/COLCHÃO.png"},
+            { id: 4, name: "Guarda Roupa Casal com Espelho e Pés 8 Portas grafite", price: 264.00, src_image: "../images/items/GUARDA_ROUPAS.png"},
+            { id: 5, name: "Cozinha Completa 6 Peças 12 Portas com Torre Quente ", price: 292.00, src_image: "../images/items/ARMARIO_DE_COZINHA.png"},
+            { id: 6, name: "Forno Elétrico Dako Supreme 44 Litros Titanium", price: 265.00, src_image: "../images/items/FORNO.png"},
+            { id: 7, name: "Micro-ondas LG 30L Preto Solo NeoChef", price: 276.00, src_image: "../images/items/MICROODAS.png"},
+            { id: 8, name: "AirFryer Oven Electrolux 12L (EAF90)", price: 267.00, src_image: "../images/items/AIRFRYER.png"},
+            { id: 9, name: "Multiprocessador PMP1600P 9 Em 1  1700W Philco", price: 270.00, src_image: "../images/items/MULTIPROCESSADOR.png"},
+            { id: 10, name: "Batedeira Planetária Oster Bowl OBAT641", price: 225.00, src_image: "../images/items/BATEDEIRA.png"},
+            { id: 11, name: "Panela de Pressão 6,8l Antiaderente ", price: 350.00, src_image: "../images/items/PANELA_DE_PRESSAO.png"},
+            { id: 12, name: "Conjunto de Panelas Antiaderente", price: 340.00, src_image: "../images/items/CONJUNTO_DE_PANELAS.png"},
+            { id: 13, name: "Ferro a Vapor Arno Durilium Airglide 1520W 220V", price: 330.00, src_image: "../images/items/FERRO_DE_PASSAR.png"},
+            { id: 14, name: "Mesa de Jantar Pequia 6 lugares", price: 292.00, src_image: "../images/items/MESA_6_LUGARES.png"},
+            { id: 15, name: "Kit Ferramentas Maleta 178 Pçs Bosch  Mecânica", price: 234.00, src_image: "../images/items/KIT_FERRAMENTA.png"},
+            { id: 16, name: "kit trio tapete runner Cozinha com Passadeira ", price: 240.00, src_image: "../images/items/TAPETE.png"},
+            { id: 17, name: "Lorenzetti Acqua Duo Ultra Chuveiro ", price: 310.00, src_image: "../images/items/CHUVEIRO.png"},
+            { id: 18, name: "Toalhas de banho 5 pç/100% Algodão", price: 280.00, src_image: "../images/items/KIT_TOALHAS.png"},
+            { id: 19, name: "Armário de cozinha", price: 276.00, src_image: "../images/items/ARMARIO_DE_COZINHA.png"},
         ];
 
         function addToCard(id) {
@@ -144,7 +150,7 @@
             list.forEach(item => {
             container.innerHTML += `
                 <div class="containerCard">
-                    <img class="imgCard" src=${item.src_image} alt=${item.img_alt}>
+                    <img class="imgCard" src=${item.src_image} alt=${item.name}>
                     <p class="descriptionCard">${item.name}</p>
                     <p class="valueCard">R$ ${String(item.price.toFixed(2)).replace(".", ",")}</p>
                     <p class="descriptionInstallments">em até 3x de R$ ${item.price ? String((item.price / 3).toFixed(2)).replace(".", ",") : '-'}</p>
