@@ -68,19 +68,19 @@
             </div>
             <div id="cardItems"></div>
             <div class="checkout-total">
-                <span>Resumo do Pedido</span>
-                <div class="containerFlex">
+                <span id="titleSummary">Resumo do Pedido</span>
+                <div class="containerFlex" id="itemsSummary">
                     <span>Items</span>
-                    <span>x items</span>
+                    <strong id="cartCount"></strong>
                 </div>
                 <div class="containerFlex">
-                    <span>Total</span>
+                    <span id="total">Total</span>
                     <strong id="cartTotal">R$ 0,00</strong>
                 </div>
+                <button id="finishButton" class="finish-btn">
+                    Finalizar Checkout e Pagamento
+                </button>
             </div>
-            <button id="finishButton" class="finish-btn">
-                Finalizar e Gerar Pagamento
-            </button>
         </section>
         <div class="containerButtonAction">
             <a href="../pages/presentes.html" class="buttonsAction">
@@ -117,14 +117,15 @@
         });
         const container = document.getElementById("cardItems");
         const input = document.getElementById("searchInput");
-
         function handleLoadCards() {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
             let totalValueForPayment = 0
+        let countItems = 0
             container.innerHTML = "";
 
             cart.forEach(item => {
-                totalValueForPayment += item.price
+                totalValueForPayment += item.price * item.quantity;
+                countItems += item.quantity;
                 container.innerHTML += `
                     <div class="containerCard">
                         <img class="imgCard" src=${item.src_image} alt=${item.img_alt}>
@@ -132,17 +133,26 @@
                             <p class="descriptionCard">${item.name}</p>
                             <p class="valueCard">R$ ${String(item.price.toFixed(2)).replace(".", ",")}</p>
                             <p class="descriptionInstallments">em até 3x de R$ ${item.price ? String((item.price / 3).toFixed(2)).replace(".", ",") : '-'}</p>
-                            <button class="buttonAddCar" onclick="handleRemoveItem(${item.id})">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0808f5">
-                                    <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
-                                </svg>
-                            </button>
+                            <div class="containerButtonActionsCard">
+                                <div class="quantity-control">
+                                    <button class="qty-btn minus" onclick="handleSubtractItem(${item.id})">-</button>
+                                    <input type="number" value="${item.quantity}" min="1" class="qty-input">
+                                    <button class="qty-btn plus" onclick="handleAddSumItem(${item.id})">+</button>
+                                </div>
+                                <button class="buttonRemoveCar" onclick="handleRemoveItem(${item.id})">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0808f5">
+                                        <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `;
             });
             const divTotal = document.getElementById("cartTotal");
             divTotal.innerHTML = `R$ ${String(totalValueForPayment.toFixed(2)).replace('.', ',')}`
+            const divCount = document.getElementById("cartCount");
+            divCount.innerHTML = `${countItems}`;
         }
         handleLoadCards()
 
@@ -151,6 +161,24 @@
             const updateCart = cart.filter(item => item.id !== id);
             localStorage.setItem("cart", JSON.stringify(updateCart));
             alert("Produto removido do carrinho!");
+            handleLoadCards()
+        }
+
+        function handleAddSumItem(id) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const updateCart = cart.find(item => item.id === id);
+            updateCart['quantity'] += 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            handleLoadCards()
+        }
+
+        function handleSubtractItem(id) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const updateCart = cart.find(item => item.id === id);
+            if (updateCart['quantity'] > 1) {
+                updateCart['quantity'] -= 1;
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
             handleLoadCards()
         }
     </script>

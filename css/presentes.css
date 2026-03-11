@@ -139,14 +139,14 @@
     margin-top: 0.5rem;
 }
 .valueCard {
-    margin: 0.5rem 0;
+    margin-top: 0.5rem;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 600;
     color: #00245F;
 }
 .descriptionInstallments {
     font-weight: 400;
-    margin: 0.5rem 0;
+    margin-bottom: 1rem;
 }
 .containerCard {
     max-width: 300px;
