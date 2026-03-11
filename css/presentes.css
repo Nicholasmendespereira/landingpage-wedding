@@ -2,7 +2,28 @@
     display: flex;
     flex-direction: column;
     padding-top: 10px;
-    background-color: #FFA1AD;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+        url('../images/background/background_renda.png');
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: hidden;
+}
+#containerHeaderGifts.sticky {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(4px);
+    background: rgba(255,255,255,0.4); /* controla a opacidade */
 }
 #initialsNames {
     color: #00245F;
@@ -15,25 +36,20 @@
 #containerSearch {
     display: flex;
     align-items: center;
+    gap: 10px;
     border-radius: 10px 10px 0px 0px;
     padding: 10px;
-    background: #ffa1ad82;
 }
 #iconHome {
     width: 2rem;
 }
 .search-wrapper {
-    gap: 20px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
     justify-content: center;
-    position: relative;
-    width: 90%;
-    max-width: 420px;
-    margin: 0 auto;
-    flex-direction: row-reverse;
 }
-
 .search-wrapper input {
   width: 50%;
   padding: 0.9em 1.2em 0.9em 3em;
@@ -47,26 +63,33 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
 .search-wrapper input::placeholder {
   color: #b8a9a9;
 }
-
 .search-wrapper input:focus {
   border-color: #d8b4b4;
   box-shadow: 0 6px 18px rgba(216, 180, 180, 0.3);
   background-color: #ffffff;
 }
-
 .search-icon {
-  position: absolute;
-  left: 12%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1.2em;
-  height: 1.2em;
-  color: #c9a4a4;
-  pointer-events: none;
+    position: absolute;
+    left: 12px;
+    width: 1.2em;
+    height: 1.2em;
+    color: #c9a4a4;
+}
+.search-input-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+.search-input-container input{
+    width: 100%;
+    padding: 0.9em 1.2em 0.9em 2.8em;
+    border-radius: 50px;
+    border: 1px solid #e8dede;
 }
 .shoping-car-icon {
   /* transform: translateY(-50%); */
@@ -118,7 +141,7 @@
     margin: 0.5rem 0;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 600;
-    color: #0050D1;
+    color: #00245F;
 }
 .descriptionInstallments {
     font-weight: 400;
