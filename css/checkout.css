@@ -1,3 +1,115 @@
+#containerHeaderGifts {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+        url('../images/background/background_renda.png');
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: hidden;
+}
+#containerHeaderGifts.sticky {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(4px);
+    background: rgba(255,255,255,0.4); /* controla a opacidade */
+}
+#initialsNames {
+    color: #00245F;
+    margin: 0.5rem 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-family: "Great Vibes", cursive;
+}
+#containerSearch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+}
+#iconHome {
+    width: 2rem;
+}
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+}
+.search-wrapper input {
+  width: 50%;
+  padding: 0.9em 1.2em 0.9em 3em;
+  border-radius: 50px;
+  border: 1px solid #e8dede;
+  background-color: #fffafc;
+  font-size: clamp(14px, 2.5vw, 18px);
+  font-family: "Montserrat", sans-serif;
+  color: #5a4a4a;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.search-wrapper input::placeholder {
+  color: #b8a9a9;
+}
+.search-wrapper input:focus {
+  border-color: #d8b4b4;
+  box-shadow: 0 6px 18px rgba(216, 180, 180, 0.3);
+  background-color: #ffffff;
+}
+.search-icon {
+    position: absolute;
+    left: 12px;
+    width: 1.2em;
+    height: 1.2em;
+    color: #c9a4a4;
+}
+.search-input-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+.search-input-container input{
+    width: 100%;
+    padding: 0.9em 1.2em 0.9em 2.8em;
+    border-radius: 50px;
+    border: 1px solid #e8dede;
+}
+.shoping-car-icon {
+  /* transform: translateY(-50%); */
+  width: 1.5rem;
+  cursor: pointer;
+}
+.containerCarShopping {
+    display: flex;
+    align-items: center;
+}
+.paragraph {
+    line-height: 1.6;
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    color: #00245F;
+    font-family: "Montserrat", sans-serif;
+    font-size: medium;
+    font-weight: 500;
+}
+#ca
 .checkout-container {
   max-width: 600px;
   margin: 60px auto;
@@ -13,18 +125,32 @@
   margin-bottom: 30px;
   color: #6e5c5c;
 }
-
+.containerCard {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    border: 10px solid #ebebeb;
+}
+.containerCardsDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 .cart-item {
   display: flex;
   justify-content: space-between;
   padding: 12px 0;
   border-bottom: 1px solid #f0e6e6;
 }
-
 .cart-item span {
   color: #5a4a4a;
 }
-
 #cardItems {
     display: flex;
     flex-wrap: wrap;
@@ -33,7 +159,7 @@
     justify-content: space-around;
 }
 .imgCard {
-    width: 12rem;
+    width: 20rem;
     border-radius: 20px;
     max-width: 300px;
 }
@@ -44,13 +170,14 @@
 }
 .valueCard {
     margin: 0.5rem 0;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(0.5rem, 4vw, 2.5rem);
     font-weight: 600;
-    color: #0050D1;
+    color: #00245F;
 }
 .descriptionInstallments {
     font-weight: 400;
     margin: 0.5rem 0;
+    font-size: 14px;
 }
 .buttonAddCar {
     text-align: center;
@@ -58,8 +185,7 @@
     border-radius: 20px;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
-    color: #FFFFFF;
-    background-color: #ff0808f5;
+    background-color: #ff080829;
     border: none;
     border-radius: 10px;
     padding: 10px;
@@ -116,4 +242,17 @@
 
 .buttonsAction:active {
     transform: scale(0.97);
+}
+.containerFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cartTotal {
+    color: #00245F;
+    margin: 0.5rem 0;
+    text-align: center;
+    font-weight: bolder;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
 }

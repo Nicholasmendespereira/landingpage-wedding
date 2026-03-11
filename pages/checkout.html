@@ -20,12 +20,63 @@
     <header>
     </header>
     <main>
+        <div id="containerHeaderGifts">
+            <h2 id="initialsNames">Ianara & Nicholas </h2>
+            <div id="containerSearch">
+                <div id="iconHome">
+                    <a href="../index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#00245F">
+                            <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="search-wrapper">
+                    <div class="search-input-container">
+                        <svg class="search-icon" viewBox="0 0 24 24">
+                            <path d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+                        </svg>
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Buscar pelo nome..."
+                        />
+                    </div>
+                    <div class="containerCarShopping">
+                        <!-- svg carrinho -->
+                            <a href="../pages/checkout.html" id="buttonCarShoppings">
+                            <svg class="shoping-car-icon" fill="#00245F" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                <path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/>
+                            </svg>
+                        </a>
+                        <h3 id="totalValue"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
         <section class="checkout-container">
-            <h2 class="checkout-title">Resumo do Presente</h2>
+            <h2 id="initialsNames">Carrinho dos Sonhos</h2>
+            <div>
+                <p class="paragraph">
+                    Estes são os sonhos que você está <br>
+                    ajudando a realizar.
+                </p>
+            </div>
             <div id="cardItems"></div>
             <div class="checkout-total">
-                <span>Total</span>
-                <strong id="cartTotal">R$ 0,00</strong>
+                <span>Resumo do Pedido</span>
+                <div class="containerFlex">
+                    <span>Items</span>
+                    <span>x items</span>
+                </div>
+                <div class="containerFlex">
+                    <span>Total</span>
+                    <strong id="cartTotal">R$ 0,00</strong>
+                </div>
             </div>
             <button id="finishButton" class="finish-btn">
                 Finalizar e Gerar Pagamento
@@ -77,14 +128,16 @@
                 container.innerHTML += `
                     <div class="containerCard">
                         <img class="imgCard" src=${item.src_image} alt=${item.img_alt}>
-                        <p class="descriptionCard">${item.name}</p>
-                        <p class="valueCard">R$ ${String(item.price.toFixed(2)).replace(".", ",")}</p>
-                        <p class="descriptionInstallments">em até 3x de R$ ${item.price ? String((item.price / 3).toFixed(2)).replace(".", ",") : '-'}</p>
-                        <button class="buttonAddCar" onclick="handleRemoveItem(${item.id})">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                                <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
-                            </svg>
-                        </button>
+                        <div>
+                            <p class="descriptionCard">${item.name}</p>
+                            <p class="valueCard">R$ ${String(item.price.toFixed(2)).replace(".", ",")}</p>
+                            <p class="descriptionInstallments">em até 3x de R$ ${item.price ? String((item.price / 3).toFixed(2)).replace(".", ",") : '-'}</p>
+                            <button class="buttonAddCar" onclick="handleRemoveItem(${item.id})">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ff0808f5">
+                                    <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 `;
             });

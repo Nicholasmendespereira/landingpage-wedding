@@ -102,7 +102,8 @@
 }
 .totalValue {
     font-size: 1rem;
-    background: #15680C;
+    background: #00245F;
+    color: #ffffff;
     padding: 3px;
     border-radius: 100%;
     width: 1rem;
