@@ -183,6 +183,13 @@
         }
 
         function finalyBuy() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const itemsForPayment = cart.map(item => ({
+                name: item.name,
+                quantity: item.quantity,
+                value: item.price * item.quantity
+            }))
+            debugger
             fetch("https://checkout-worker.mendesnik827.workers.dev", {
                 method: "POST",
                 headers: {
@@ -196,13 +203,7 @@
                         cancelUrl: "https://google.com/cancel",
                         expiredUrl: "https://google.com/expired"
                     },
-                    items: [
-                        {
-                            name: "cadeira",
-                            quantity: 1,
-                            value: 100
-                        }
-                    ]
+                    items: itemsForPayment
                 })
             })
             .then(r => r.json())
