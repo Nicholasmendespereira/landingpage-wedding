@@ -209,8 +209,8 @@
             .then(data => {
                 console.log(data);
                 // redirecionar para pagamento
-                if (data.checkoutUrl) {
-                    window.location.href = data.checkoutUrl;
+                if (data.link) {
+                    window.location.href = data.link;
                 }
             })
         }
