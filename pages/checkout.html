@@ -70,7 +70,7 @@
             <div class="checkout-total">
                 <span id="titleSummary">Resumo do Pedido</span>
                 <div class="containerFlex" id="itemsSummary">
-                    <span>Items</span>
+                    <span>Itens</span>
                     <strong id="cartCount"></strong>
                 </div>
                 <div class="containerFlex">
@@ -185,11 +185,12 @@
         function finalyBuy() {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
             const itemsForPayment = cart.map(item => ({
-                name: item.name,
+                name: 'Contribuição para os noivos',
+                description: 'Contribuição para os noivos' + item.name.slice(0, 30), // limitar a 30 caracteres
                 quantity: item.quantity,
                 value: item.price * item.quantity
             }))
-            debugger
+
             fetch("https://checkout-worker.mendesnik827.workers.dev", {
                 method: "POST",
                 headers: {
