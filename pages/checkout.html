@@ -77,7 +77,7 @@
                     <span id="total">Total</span>
                     <strong id="cartTotal">R$ 0,00</strong>
                 </div>
-                <button id="finishButton" class="finish-btn">
+                <button id="finishButton" class="finish-btn" onclick="finalyBuy()">
                     Finalizar Checkout e Pagamento
                 </button>
             </div>
@@ -180,6 +180,30 @@
             }
             localStorage.setItem("cart", JSON.stringify(cart));
             handleLoadCards()
+        }
+
+        function finalyBuy() {
+            fetch("https://checkout-worker.mendesnik827.workers.dev", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    billingTypes: ["CREDIT_CARD"],
+                    chargeTypes: ["DETACHED"],
+                    items: [
+                        {
+                            name: "cadeira",
+                            quantity: 1,
+                            value: 100
+                        }
+                    ]
+                })
+            })
+            .then(r => r.json())
+            .then(data => {
+                console.log(data);
+            })
         }
     </script>
 </body>
