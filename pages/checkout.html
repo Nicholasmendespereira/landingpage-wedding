@@ -191,6 +191,11 @@
                 body: JSON.stringify({
                     billingTypes: ["CREDIT_CARD"],
                     chargeTypes: ["DETACHED"],
+                    callback: {
+                        successUrl: "https://google.com/success",
+                        cancelUrl: "https://google.com/cancel",
+                        expiredUrl: "https://google.com/expired"
+                    },
                     items: [
                         {
                             name: "cadeira",
@@ -203,6 +208,10 @@
             .then(r => r.json())
             .then(data => {
                 console.log(data);
+                // redirecionar para pagamento
+                if (data.checkoutUrl) {
+                    window.location.href = data.checkoutUrl;
+                }
             })
         }
     </script>
