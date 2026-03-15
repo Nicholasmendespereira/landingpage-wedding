@@ -1,0 +1,80 @@
+body{
+    margin:0;
+    font-family: "Montserrat", sans-serif;
+    background:linear-gradient(135deg,#f8f9fa,#ffffff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    text-align:center;
+    background:white;
+    padding:50px 30px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    max-width:500px;
+    width:90%;
+}
+
+h1{
+    color:#00245F;
+    margin-top:20px;
+}
+
+p{
+    color:#3A3116;
+    line-height:1.6;
+    margin-top:15px;
+}
+
+button{
+    margin-top:30px;
+    padding:14px 28px;
+    border:none;
+    border-radius:8px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    background-color: #00cf33;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    font-weight: bold;
+    background-color: #00cf33;
+}
+.names{
+    font-weight:bold;
+    color:#00245F;
+    font-family: "Montserrat", sans-serif;
+}
+#initialsNames {
+    color: #00245F;
+    margin: 0.5rem 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-family: "Great Vibes", cursive;
+}
+
+
+lottie-player{
+max-width:220px;
+width:60%;
+margin:auto;
+}
+
+@media (max-width:600px){
+
+.container{
+    padding:40px 20px;
+}
+
+h1{
+    font-size:24px;
+}
+
+}
