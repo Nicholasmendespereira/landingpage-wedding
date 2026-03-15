@@ -199,12 +199,14 @@
                 body: JSON.stringify({
                     billingTypes: ["CREDIT_CARD"],
                     chargeTypes: ["DETACHED"],
+                    maxInstallmentCount: 3,
                     callback: {
                         successUrl: "https://landingpage-wedding.pages.dev/pages/success.html",
                         cancelUrl: "https://landingpage-wedding.pages.dev/pages/callback.html",
                         expiredUrl: "https://landingpage-wedding.pages.dev/pages/callback.html"
                     },
-                    items: itemsForPayment
+                    items: itemsForPayment,
+                    minutesToExpire: 20
                 })
             })
             .then(r => r.json())
